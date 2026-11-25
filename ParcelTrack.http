@@ -6,7 +6,7 @@
 @staff_token = paste-token-from-request-3-here
 @admin_token = paste-token-from-request-9-here
 
-### 1. Every parcel. Expect 200 OK, with fees (800, 650, 1250, 2000, 1250)
+### 1. Every parcel. Expect 200 OK, with fees (800, 650, 1250, 2000, 1250
 GET {{host}}/api/parcels
 
 ### 2. Add a parcel with no token. Expect 401 Unauthorized
