@@ -2,9 +2,9 @@
 {
     public class DeliveryFeeCalculator : IDeliveryFeeCalculator
     {
-        public decimal Calculate(decimal weightKg, string? parish)
+        public decimal Calculate(double weightKg, string? parish)
         {
-            decimal wholeKg = Math.Ceiling(weightKg);
+            decimal wholeKg = (decimal)Math.Ceiling(weightKg);
             decimal fee = 500m + (150m * wholeKg);
 
             bool isKingstonOrStAndrew =
@@ -17,11 +17,6 @@
             }
 
             return fee;
-        }
-
-        public dynamic Calculate(double weightKg, string? parish)
-        {
-            throw new NotImplementedException();
         }
     }
 }

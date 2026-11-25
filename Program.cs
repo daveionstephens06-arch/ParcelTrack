@@ -48,9 +48,9 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("CanManageParcels", policy => policy.RequireRole("Admin", "Staff"));
 });
 
-var app = builder.Build();
-
 builder.Services.AddSingleton<IDeliveryFeeCalculator, DeliveryFeeCalculator>();
+
+var app = builder.Build();
 
 // Start-up seed: the roles and the two demo accounts. A scope, because there is no request yet.
 using (IServiceScope scope = app.Services.CreateScope())
